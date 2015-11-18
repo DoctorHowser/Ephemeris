@@ -1,0 +1,41 @@
+.instructions .container h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.instructions {
+    background-color: #333333;
+    color: #DDDDDD;
+}
+
+#entryForm {
+    margin-top: 14px;
+}
+
+#container {
+    margin-top: 10px;
+}
+
+.container p{
+    margin-top : 14px;
+}
+
+.message {
+    padding: 10px 0;
+}
+
+.message p {
+    margin-left: 10px;
+}
+
+.message:nth-child(odd) {
+     background-color: #eeeeee;
+}
+
+.message:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.btn-danger{
+    margin-left: 10px;
+}

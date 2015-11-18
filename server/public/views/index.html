@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Express / Passport</title>
+
+        <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/styles/style.css">
+
+        <script type="text/javascript" src="/vendors/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
+    </head>
+
+    <body>
+        <div class="instructions">
+            <div class="container">
+                <h1 class="lead">Passport Login</h1>
+            </div>
+        </div>
+        <div class="container">
+            <form action="/" method="post">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username"/>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password"/>
+                </div>
+                <div>
+                    <input type="submit" value="Log In"/>
+                    <a href="/register">Register</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
