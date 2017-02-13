@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/app.js"
   },
-  "author": "Scott Bromander",
+  "author": "Dane Smith",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^0.8.4",
@@ -19,9 +19,12 @@
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-uglify": "^0.9.1",
     "jquery": "^2.1.4",
+    "moment": "^2.17.1",
+    "moment-timezone": "^0.5.11",
     "mongoose": "^4.1.1",
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
-    "path": "^0.11.14"
+    "path": "^0.11.14",
+    "swisseph": "^0.5.7"
   }
 }
