@@ -8,21 +8,20 @@ let ephemeris = require('../Services/ephemris');
 router.get('/ephemeris', requestValidator.checkParams, function (req, res, next) {
 
     let birthDateAndTime = {
-        month: req.params.month,
-        day: req.params.day,
-        year: req.params.year,
-        hour: req.params.hour,
-        minute: req.params.minute,
-        timeZone: req.params.timeZone
+        month: req.query.month,
+        day: req.query.day,
+        year: req.query.year,
+        hour: req.query.hour,
+        minute: req.query.minute,
+        timeZone: req.query.timeZone
     };
 
     let location = {
-        lat: req.params.lat,
-        lon: req.params.lon
+        lat: req.query.lat,
+        lon: req.query.lon
     };
-
     let response = ephemeris.getEphemeris(birthDateAndTime, location);
-    console.log("response: ", response);
+
     res.send(response)
 });
 

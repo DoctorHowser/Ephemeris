@@ -9,8 +9,6 @@ swisseph.swe_set_ephe_path (__dirname + '/../ephe');
 
 var date = {year: "1984", month: "03", day: "29", hour: "11", minute: "07", second: "0", timeZone: "America/New_York"};
 let place = {lat: 40.9793, long: -74.1165};
-console.log ('Date:', date);
-
 
 module.exports = {
     getEphemeris : getEphemeris
@@ -20,9 +18,7 @@ module.exports = {
 //MUST BE IN UTC
 function getEphemeris(birthdate, location) {
     resetPlanetsReturn();
-
-    let utcDateTime = getUtcDate(date);
-
+    let utcDateTime = getUtcDate(birthdate);
     let juldate = swisseph.swe_julday(utcDateTime.year(), utcDateTime.month(), utcDateTime.day(), utcDateTime.hour(), swisseph.SE_GREG_CAL);
     setPlanets(juldate, location);
     return getPlanets();
