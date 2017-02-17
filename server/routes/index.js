@@ -17,8 +17,8 @@ router.get('/ephemeris', requestValidator.checkParams, function (req, res, next)
     };
 
     let location = {
-        lat: req.query.lat,
-        lon: req.query.lon
+        lat: parseFloat(req.query.lat),
+        lon: parseFloat(req.query.lon)
     };
     let response = ephemeris.getEphemeris(birthDateAndTime, location);
 

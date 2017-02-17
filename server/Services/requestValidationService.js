@@ -78,6 +78,10 @@ function checkParams(req, res, next) {
         return res.status(400).send("unknown time zone " + tz)
     }
 
+    if(!req.query.lat || !req.query.lon) {
+        return res.status(400).send("missing lat or lon " + tz)
+    }
+
     next()
 }
 
