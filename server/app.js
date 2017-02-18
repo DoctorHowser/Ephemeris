@@ -11,11 +11,13 @@ app.set("port", (process.env.PORT || 5000));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({expanded: true}));
 
+console.log("dirname" ,__dirname);
+
+app.use('/vendors', express.static(__dirname + '/public/vendors'));
+app.use('/assets', express.static(__dirname + '/public/assets'));
+
 // Routes
 app.use('/', index);
-
-// Mongo Connection //
-
 
 // Listen //
 app.listen(app.get("port"), function(){

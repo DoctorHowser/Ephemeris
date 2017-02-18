@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
-let requestValidator = require('../Services/requestValidationService');
-let ephemeris = require('../Services/ephemris');
+var requestValidator = require('../Services/requestValidationService');
+var ephemeris = require('../Services/ephemris');
 
 router.get('/ephemeris', requestValidator.checkParams, function (req, res, next) {
 

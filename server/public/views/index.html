@@ -3,14 +3,34 @@
     <head>
         <title>Ephemeris</title>
 
-        <!--<link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.min.css">-->
-        <!--<link rel="stylesheet" href="/assets/styles/style.css">-->
+        <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/styles/style.css">
 
-        <!--<script type="text/javascript" src="/vendors/jquery/dist/jquery.min.js"></script>-->
-        <!--<script type="text/javascript" src="/assets/scripts/app.min.js"></script>-->
+        <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>
+        <script type="text/javascript" src="/assets/scripts/app.min.js"></script>
     </head>
 
-    <body>
-       <h1>Health Check! Ephemeris is running!</h1>
+    <body class="container">
+        <div class="jumbotron">
+            <h1>Health Check! Ephemeris is running!</h1>
+        </div>
+       <div ng-app="myApp">
+            <div ng-controller="EphemerisController">
+               <form>
+                        <div location-input location-object="location.lat" input-id="lat" label-text="Latitude"></div>
+                        <div  location-input location-object="location.lon" input-id="lon" label-text="Longitude"></div>
+                        <div date-time-input date-time-object="dateTime.year" input-id="year" label-text="Birth Year"></div>
+                        <div date-time-input date-time-object="dateTime.month" input-id="month" label-text="Birth Month"></div>
+                        <div date-time-input date-time-object="dateTime.day" input-id="day" label-text="Birth Day"></div>
+                        <div date-time-input date-time-object="dateTime.hour" input-id="hour" label-text="Birth Hour"></div>
+                        <div date-time-input date-time-object="dateTime.minute" input-id="minute" label-text="Birth Minute"></div>
+                        <div time-zone-input time-zone-object="timeZone" input-id="timezone" label-text="Time Zone" time-zone-options="timeZoneOptions"></div>
+                        
+                    <button ng-click="getEphemeris()">Get Ephemeris</button>
+                </form>
+                
+                <pre><code>{{result}}</code></pre>
+            </div>
+       </div>
     </body>
 </html>

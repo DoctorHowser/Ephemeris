@@ -4,19 +4,20 @@ module.exports = function(grunt){
         uglify: {
             options: {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-            },
+            }
+            
+        },
+        copy: {
             app: {
                 src: 'client/scripts/app.js',
                 dest: 'server/public/assets/scripts/app.min.js'
-            }
-        },
-        copy: {
-            jquery: {
+            },
+            angular: {
                 expand: true,
                 cwd: 'node_modules',
                 src: [
-                    "jquery/dist/jquery.min.js",
-                    "jquery/dist/jquery.min.map"
+                    "angular/angular.min.js",
+                    "angular/angular.min.map"
                 ],
                 "dest": "server/public/vendors/"
             },
@@ -42,5 +43,5 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['copy', 'uglify']);
+    grunt.registerTask('default', ['copy']);
 };
