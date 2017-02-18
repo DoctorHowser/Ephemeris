@@ -16,17 +16,17 @@
         </div>
        <div ng-app="myApp">
             <div ng-controller="EphemerisController">
-               <form>
-                        <div location-input location-object="location.lat" input-id="lat" label-text="Latitude"></div>
-                        <div  location-input location-object="location.lon" input-id="lon" label-text="Longitude"></div>
-                        <div date-time-input date-time-object="dateTime.year" input-id="year" label-text="Birth Year"></div>
-                        <div date-time-input date-time-object="dateTime.month" input-id="month" label-text="Birth Month"></div>
-                        <div date-time-input date-time-object="dateTime.day" input-id="day" label-text="Birth Day"></div>
-                        <div date-time-input date-time-object="dateTime.hour" input-id="hour" label-text="Birth Hour"></div>
-                        <div date-time-input date-time-object="dateTime.minute" input-id="minute" label-text="Birth Minute"></div>
+               <form novalidate ng-submit="getEphemeris()">
+                        <div location-input location-object="location.lat" input-id="lat" label-text="Latitude" input-placeholder='44.9778 N is Positive, S is Negative'></div>
+                        <div location-input location-object="location.lon" input-id="lon" label-text="Longitude" input-placeholder='-93.2650 E is Positive, W is Negative'></div>
+                        <div date-time-input date-time-object="dateTime.year" input-id="year" label-text="Birth Year" input-placeholder='YYYY'></div>
+                        <div date-time-input date-time-object="dateTime.month" input-id="month" label-text="Birth Month" input-placeholder='MM'></div>
+                        <div date-time-input date-time-object="dateTime.day" input-id="day" label-text="Birth Day" input-placeholder='DD'></div>
+                        <div date-time-input date-time-object="dateTime.hour" input-id="hour" label-text="Birth Hour" input-placeholder='HH'></div>
+                        <div date-time-input date-time-object="dateTime.minute" input-id="minute" label-text="Birth Minute" input-placeholder='mm'></div>
                         <div time-zone-input time-zone-object="timeZone" input-id="timezone" label-text="Time Zone" time-zone-options="timeZoneOptions"></div>
                         
-                    <button ng-click="getEphemeris()">Get Ephemeris</button>
+                    <input type="submit" >Get Ephemeris</button>
                 </form>
                 
                 <pre><code>{{result}}</code></pre>

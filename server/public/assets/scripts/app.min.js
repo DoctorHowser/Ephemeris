@@ -69,14 +69,15 @@ var myApp = angular.module("myApp", [])
 
     function LocationInput($document) {
 
-        var template = "<div class='form-group'><label for='inputId'>{{labelText}}</label><input class='form-control' id='inputId' type='text' ng-model='locationObject'></input></div>"
+        var template = "<div class='form-group'><label for='inputId'>{{labelText}}</label><input required placeholder='{{inputPlaceholder}}' class='form-control' id='inputId' type='text' ng-model='locationObject'></input></div>"
         
         return {
             template: template,
             scope: {
                 locationObject : '=',
                 inputId : '@',
-                labelText : '@'
+                labelText : '@',
+                inputPlaceholder : '@'
             },
 
         }
@@ -86,14 +87,15 @@ var myApp = angular.module("myApp", [])
 
     function DateTimeInput($document) {
 
-        var template = "<div class='form-group'><label for='inputId'>{{labelText}}</label><input class='form-control' id='inputId' type='text' ng-model='dateTimeObject'></input></div>"
+        var template = "<div class='form-group'><label for='inputId'>{{labelText}}</label><input required placeholder='{{inputPlaceholder}}' class='form-control' id='inputId' type='text' ng-model='dateTimeObject'></input></div>"
         
         return {
             template: template,
             scope: {
                 dateTimeObject : '=',
                 inputId : '@',
-                labelText : '@'
+                labelText : '@',
+                inputPlaceholder : '@'
             },
 
         }
@@ -106,7 +108,7 @@ var myApp = angular.module("myApp", [])
         var template = "\
         <div class='form-group'>\
             <label for='inputId'>{{labelText}}</label>\
-                <select ng-options='key as value for (key, value) in timeZoneOptions' class='form-control' id='inputId' type='text' ng-model='timeZoneObject'>\
+                <select required ng-options='key as value for (key, value) in timeZoneOptions' class='form-control' id='inputId' type='text' ng-model='timeZoneObject'>\
             </select>\
             </div>"
         
