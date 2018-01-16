@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "grunt && node server/app.js"
   },
+  "engines": {
+    "node" : "9.4.0"
+  },
   "author": "Dane Smith",
   "license": "ISC",
   "dependencies": {
